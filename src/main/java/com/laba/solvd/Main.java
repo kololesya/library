@@ -1,13 +1,11 @@
 package com.laba.solvd;
 
-
 import java.util.Scanner;
-
 import static com.laba.solvd.LibrarySystem.*;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         int choice;
 
         do {
@@ -17,17 +15,17 @@ public class Main {
             System.out.println("3. Return Books");
             System.out.println("4. Exit");
             System.out.print("Enter your choice: ");
-            choice = getValidIntegerInput(scanner);
+            choice = getValidIntegerInput(sc);
 
             switch (choice) {
-                case 1 -> addBooks(scanner);
-                case 2 -> borrowBooks(scanner);
-                case 3 -> returnBooks(scanner);
+                case 1 -> addBooks();
+                case 2 -> borrowBooks();
+                case 3 -> returnBooks();
                 case 4 -> System.out.println("Exiting the Library System. Goodbye!");
                 default -> System.out.println("Invalid choice. Please try again.");
             }
         } while (choice != 4);
 
-        scanner.close();
+        sc.close();
     }
 }
